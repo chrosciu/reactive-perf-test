@@ -16,7 +16,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.nuxplanet.imperative'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
@@ -30,6 +30,7 @@ dependencies {
     }
     compile("org.springframework.boot:spring-boot-starter-jetty")
     compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

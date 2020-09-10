@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.2.RELEASE'
+        springBootVersion = '2.3.3.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -20,7 +20,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.nuxplanet.imperative'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
@@ -31,6 +31,7 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
@@ -40,10 +41,10 @@ bootRun {
 
 jib {
     from {
-        image = "openjdk:8-jdk-alpine"
+        image = "openjdk:11.0-slim"
     }
     to {
-        image = "509029984649.dkr.ecr.eu-central-1.amazonaws.com/imperative"
+        image = "imperative"
     }
     container {
         jvmFlags = ['-Xmx1024m', '-Dserver.port=8081']
