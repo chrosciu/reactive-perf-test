@@ -1,5 +1,5 @@
 package com.nuxplanet.common;
 
 public class Constants {
-    public final static int DELAY = 2000;
+    public final static int DELAY = 500;
 }

@@ -23,6 +23,15 @@ public class ItemReactiveRepository {
                 .delaySubscription(Duration.ofMillis(DELAY));
     }
 
+    public Mono<Item> getItemBlocking() {
+        try {
+            Thread.sleep(DELAY);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return Mono.just(new Item("Hello world"));
+    }
+
     public Flux<Item> getItemsBlocking() {
         try {
             Thread.sleep(DELAY);
