@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static com.nuxplanet.common.Constants.DELAY;
+
 @Repository
 public class ItemImperativeRepository {
 
@@ -23,7 +25,7 @@ public class ItemImperativeRepository {
 
     private void sleep() {
         try {
-            Thread.sleep(500);
+            Thread.sleep(DELAY);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -7,10 +7,10 @@ import reactor.core.publisher.Mono;
 import java.time.Duration;
 import java.util.stream.IntStream;
 
+import static com.nuxplanet.common.Constants.DELAY;
+
 @Repository
 public class ItemReactiveRepository {
-
-    private final static int DELAY = 500;
 
     public Mono<Item> getItem() {
         return Mono.just(new Item("Hello world"))
