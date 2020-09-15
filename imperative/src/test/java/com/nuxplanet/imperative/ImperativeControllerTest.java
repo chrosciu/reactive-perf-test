@@ -18,15 +18,8 @@ public class ImperativeControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void will_get_just_one_item() throws Exception {
+    public void shouldGetItem() throws Exception {
         mockMvc.perform(get("/imperative/item"))
-                .andExpect(status().isOk());
-
-    }
-
-    @Test
-    public void will_get_lot_of_items() throws Exception {
-        mockMvc.perform(get("/imperative/items"))
                 .andExpect(status().isOk());
 
     }

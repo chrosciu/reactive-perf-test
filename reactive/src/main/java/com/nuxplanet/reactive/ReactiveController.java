@@ -1,38 +1,25 @@
 package com.nuxplanet.reactive;
 
 import com.nuxplanet.common.Item;
-import com.nuxplanet.common.ItemReactiveRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/reactive")
 class ReactiveController {
-
-    private final ItemReactiveRepository repository;
+    private final ReactiveItemRepository repository;
 
     @GetMapping("/item")
     Mono<Item> getItem() {
-        return repository.getItem();
+        return repository.getItem(0);
     }
 
-    @GetMapping("/items")
-    Flux<Item> getItems() {
-        return repository.getLotOfItems();
-    }
-
-    @GetMapping("/item/blocked")
+    @GetMapping("/item/blocking")
     Mono<Item> getItemBlocking() {
-        return repository.getItemBlocking();
-    }
-
-    @GetMapping("/items/blocked")
-    Flux<Item> getItemsBlocking() {
-        return repository.getItemsBlocking();
+        return repository.getItemBlocking(0);
     }
 }

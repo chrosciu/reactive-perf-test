@@ -1,6 +1,6 @@
 package com.nuxplanet.gatling.imperative
 
-class ImperativeOneItemSim extends ImperativeBaseSimulation {
+class ImperativeSimulation extends ImperativeBaseSimulation {
   scenarioName = "imperative-one-item"
   action = "/imperative/item"
 

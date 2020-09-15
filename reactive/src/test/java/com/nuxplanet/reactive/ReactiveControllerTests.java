@@ -16,21 +16,12 @@ public class ReactiveControllerTests {
     private WebTestClient webClient;
 
     @Test
-    public void will_get_just_one_item() {
+    public void shouldGetItem() {
         webClient.get().uri("/reactive/item")
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(Item.class)
                 .isEqualTo(new Item("Hello world"));
 
-    }
-
-    @Test
-    public void will_get_lot_of_items() {
-        webClient.get().uri("/reactive/items")
-                .exchange()
-                .expectStatus().isOk()
-                .expectBodyList(Item.class)
-                .hasSize(100);
     }
 }
