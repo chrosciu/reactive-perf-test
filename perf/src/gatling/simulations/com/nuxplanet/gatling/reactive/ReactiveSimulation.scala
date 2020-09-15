@@ -1,7 +1,7 @@
 package com.nuxplanet.gatling.reactive
 
 class ReactiveSimulation extends ReactiveBaseSimulation {
-  scenarioName = "reactive-one-item"
+  scenarioName = "reactive"
   action = "/reactive/item"
 
   run()

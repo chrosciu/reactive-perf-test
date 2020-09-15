@@ -4,6 +4,7 @@ import com.nuxplanet.common.Item;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
@@ -14,12 +15,12 @@ class ReactiveController {
     private final ReactiveItemRepository repository;
 
     @GetMapping("/item")
-    Mono<Item> getItem() {
-        return repository.getItem(0);
+    Mono<Item> getItem(@RequestParam int delay) {
+        return repository.getItem(delay);
     }
 
     @GetMapping("/item/blocking")
-    Mono<Item> getItemBlocking() {
-        return repository.getItemBlocking(0);
+    Mono<Item> getItemBlocking(@RequestParam int delay) {
+        return repository.getItemBlocking(delay);
     }
 }

@@ -21,4 +21,13 @@ public class ReactiveItemRepositoryTest {
                 .expectComplete()
                 .verify();
     }
+
+    @Test
+    public void shouldGetItemBlocking() {
+        StepVerifier.create(repository.getItemBlocking(0))
+                .expectSubscription()
+                .expectNext(new Item("Hello world"))
+                .expectComplete()
+                .verify();
+    }
 }

@@ -19,7 +19,7 @@ public class ImperativeControllerTest {
 
     @Test
     public void shouldGetItem() throws Exception {
-        mockMvc.perform(get("/imperative/item"))
+        mockMvc.perform(get("/imperative/item?delay=0"))
                 .andExpect(status().isOk());
 
     }
