@@ -1,8 +1,8 @@
 package com.nuxplanet.gatling.reactive
 
 class ReactiveBlockingSimulation extends ReactiveBaseSimulation {
-  scenarioName = "reactive-blocking"
-  action = "/reactive/item/blocking"
+  def scenarioName() = "reactive-blocking"
+  def action() = "/reactive/item/blocking"
 
   run()
 }

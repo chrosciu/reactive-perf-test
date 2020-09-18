@@ -1,8 +1,8 @@
 package com.nuxplanet.gatling.imperative
 
 class ImperativeSimulation extends ImperativeBaseSimulation {
-  scenarioName = "imperative"
-  action = "/imperative/item"
+  def scenarioName() = "imperative"
+  def action() = "/imperative/item"
 
   run()
 }
