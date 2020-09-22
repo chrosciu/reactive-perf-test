@@ -17,4 +17,11 @@ class ImperativeController {
     Item getItem(@RequestParam int delay) {
         return repository.getItem(delay);
     }
+
+    @GetMapping("/item/multiplexed")
+    Item getItemMultiplexed(@RequestParam int delay) {
+        Item first = repository.getItem(delay);
+        Item second = repository.getItem(delay);
+        return new Item(first.getValue() + second.getValue());
+    }
 }

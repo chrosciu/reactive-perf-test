@@ -23,4 +23,9 @@ class ReactiveController {
     Mono<Item> getItemBlocking(@RequestParam int delay) {
         return repository.getItemBlocking(delay);
     }
+
+    @GetMapping("/item/multiplexed")
+    Mono<Item> getItemMultiplexed(@RequestParam int delay) {
+        return Mono.zip(repository.getItem(delay), repository.getItem(delay), (i1, i2) -> new Item(i1.getValue() + i2.getValue()));
+    }
 }

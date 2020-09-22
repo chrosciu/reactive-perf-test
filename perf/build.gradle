@@ -16,6 +16,8 @@ gatling {
     simulations = [
             'com.nuxplanet.gatling.reactive.ReactiveSimulation',
             'com.nuxplanet.gatling.reactive.ReactiveBlockingSimulation',
-            'com.nuxplanet.gatling.imperative.ImperativeSimulation'
+            'com.nuxplanet.gatling.imperative.ImperativeSimulation',
+            'com.nuxplanet.gatling.reactive.ReactiveMultiplexedSimulation',
+            'com.nuxplanet.gatling.imperative.ImperativeMultiplexedSimulation',
     ]
 }
