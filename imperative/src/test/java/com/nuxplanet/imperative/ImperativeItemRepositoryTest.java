@@ -12,7 +12,8 @@ public class ImperativeItemRepositoryTest {
 
     @Before
     public void setup() {
-        repository = new ImperativeItemRepository();
+        //TODO - fix setup
+        repository = new ImperativeItemRepository(null);
     }
 
     @Test
