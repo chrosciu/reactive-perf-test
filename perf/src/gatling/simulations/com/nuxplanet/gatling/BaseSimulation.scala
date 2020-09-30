@@ -4,7 +4,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
 abstract class BaseSimulation extends Simulation {
-  var numberOfUsers = 1000
+  var numberOfUsers = 500
   var rampDuration = 3
   var delay = 500
 
